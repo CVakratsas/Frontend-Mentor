@@ -1,0 +1,79 @@
+* {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(30, 38%, 92%);
+}
+
+article {
+    box-sizing: content-box;
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.thin {
+    font-weight: 500;
+    opacity: 0.7;
+    font-size: 20px;
+}
+
+button {
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+    font-size: 14px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+#title {
+    font-family: 'Fraunces', serif;
+    width: 80%;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 32px;
+    opacity: 0.8;
+}
+
+#price {
+    display: flex;
+}
+
+#price_tag {
+    margin-right: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Fraunces', serif;
+    opacity: 0.8;
+    color: hsl(158, 36%, 37%);
+}
+
+#without_discount_price {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.white {
+    background-color: white;
+}
+
+img {
+    border-radius: 20px 0px 0px 20px;
+}
