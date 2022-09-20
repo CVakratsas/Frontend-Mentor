@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/CVakratsas/Frontend-Mentor/tree/master/01_ProductPreviewCardComponent)
+- Solution URL: [Solution](https://github.com/CVakratsas/Frontend-Mentor/tree/master/01_ProductPreviewCardComponent/solution)
 
 ## My process
 
