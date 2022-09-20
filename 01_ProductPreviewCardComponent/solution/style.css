@@ -2,6 +2,8 @@
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     background-color: hsl(30, 38%, 92%);
+    /* outline-style: solid; */
+    outline-color: blueviolet;
 }
 
 article {
@@ -38,6 +40,13 @@ button {
     border: none;
     border-radius: 10px;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover, #cart:hover {
+    background-color: #1A4031;
 }
 
 #title {
@@ -74,6 +83,16 @@ button {
     background-color: white;
 }
 
-img {
+#product {
     border-radius: 20px 0px 0px 20px;
+    height: 100%;
+}
+
+#cart {
+    background-color: hsl(158, 36%, 37%);
+    margin-right: 10px;
+}
+
+article > section {
+    margin-left: 10px;
 }
