@@ -7,7 +7,6 @@ This is a solution to the [Product preview card component challenge on Frontend 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -26,10 +25,6 @@ Users should be able to:
 ### Screenshot
 
 [Screenshot](./screenshot.png)
-
-### Links
-
-- Solution URL: [Solution](https://github.com/CVakratsas/Frontend-Mentor/tree/master/01_ProductPreviewCardComponent/solution)
 
 ## My process
 
