@@ -1,0 +1,137 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --dark-blue: hsl(215, 21%, 16%);
+  --very-dark-Blue: hsl(216, 12%, 8%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --light-grey: hsl(217, 12%, 63%);
+  --shadow-blue: #2e3740;
+}
+
+body {
+  background-color: var(--very-dark-Blue);
+}
+
+* {
+  /* outline-style: solid; */
+  outline-color: cadetblue;
+}
+
+#thank_you_box {
+  /* display: none; */
+}
+
+/* Rating box styling*/
+.rating_box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+}
+
+.font {
+  font-family: "Overpass", sans-serif;
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--medium-grey);
+}
+
+.grey {
+  color: var(--medium-grey);
+}
+
+h1 {
+  font-weight: 600;
+  color: white;
+  font-size: 25px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.orange_white {
+  background-color: var(--orange);
+  color: white;
+}
+
+.white_orange {
+  background-color: white;
+  color: var(--orange);
+}
+
+button {
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  height: 40px;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: white;
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: var(--shadow-blue);
+}
+
+.rating_box img {
+  border-radius: 50%;
+  width: 15px;
+}
+
+.star {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--shadow-blue);
+}
+
+.rating_numbers label > div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--medium-grey);
+}
+
+.rating_numbers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating_numbers label input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.rating_numbers label div:hover {
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+}
+
+.rating_numbers label > input:checked + div {
+  background-color: var(--light-grey);
+  color: white;
+}
