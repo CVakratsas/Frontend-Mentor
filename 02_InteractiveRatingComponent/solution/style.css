@@ -11,16 +11,50 @@ body {
   background-color: var(--very-dark-Blue);
 }
 
-* {
-  /* outline-style: solid; */
-  outline-color: cadetblue;
+/* Thank you box styling */
+.thank_you_box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  display: none;
 }
 
-#thank_you_box {
-  /* display: none; */
+.blue_orange {
+  background-color: var(--shadow-blue);
+  color: var(--orange);
+  width: 200px;
+  height: 30px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3px;
 }
 
-/* Rating box styling*/
+.text_end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text_start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Rating box styling */
 .rating_box {
   position: absolute;
   left: 50%;

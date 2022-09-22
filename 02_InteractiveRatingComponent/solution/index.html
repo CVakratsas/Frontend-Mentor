@@ -12,8 +12,6 @@
       href="../images/favicon-32x32.png"
     />
 
-    <script src="./functionality.js"></script>
-
     <title>Frontend Mentor | Interactive rating component</title>
 
     <link rel="stylesheet" href="./style.css" />
@@ -24,6 +22,8 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <script src="./functionality.js"></script>
   </head>
   <body>
     <!-- Rating state start -->
@@ -31,7 +31,7 @@
     <div class="font rating_box">
       <div class="star"><img src="../images/icon-star.svg" /></div>
 
-      <div class="text">
+      <div class="text_start">
         <h1>How did we do?</h1>
 
         <p>
@@ -58,7 +58,7 @@
           <div class="circle">4</div>
         </label>
         <label class="label5">
-          <input type="radio" value="5" name="rating" />
+          <input type="radio" value="5" name="rating" checked />
           <div class="circle">5</div>
         </label>
       </div>
@@ -68,17 +68,21 @@
 
     <!-- Thank you state start -->
 
-    <div id="thank_you_box" class="font">
+    <div class="thank_you_box font">
       <img src="../images/illustration-thank-you.svg" />
 
-      <div>You selected out of 5</div>
+      <div class="blue_orange">
+        You selected&nbsp;<span id="choice"></span>&nbsp;out of 5
+      </div>
 
-      <h1>Thank you!</h1>
+      <div class="text_end">
+        <h1>Thank you!</h1>
 
-      <p>
-        We appreciate you taking the time to give a rating. If you ever need
-        more support, don’t hesitate to get in touch!
-      </p>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
     </div>
   </body>
 </html>

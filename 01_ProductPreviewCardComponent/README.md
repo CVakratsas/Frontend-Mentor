@@ -1,6 +1,6 @@
 # Frontend Mentor - Product preview card component solution
 
-This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -50,4 +50,4 @@ Looking forward to the next project for which I will be more prepared, hence I w
 
 ### Useful resources
 
-- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This was very helpful for centering the components
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This was very helpful for centering the components.
