@@ -1,0 +1,48 @@
+* {
+  /* outline-style: solid; */
+  outline-width: 2px;
+  outline-color: black;
+}
+
+body {
+  background-color: rgb(171, 232, 211);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: auto;
+  background-color: rgb(136, 231, 199);
+  color: black;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 10px 10px #0000007d;
+}
+
+label {
+  font-size: 40px;
+}
+
+ul > li {
+  font-size: 30px;
+}
+
+ul > li > a:link {
+  color: black;
+}
+
+ul > li > a:visited {
+  color: rgb(40, 38, 38);
+}
+
+ul > li > a:hover {
+  color: rgb(180, 25, 25);
+}
+
+ul > li > a:active {
+  color: rgb(255, 0, 0);
+}
