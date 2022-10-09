@@ -12,6 +12,10 @@
       href="./images/favicon-32x32.png"
     />
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+    </style>
+
     <link rel="stylesheet" href="./styling.css" />
     <title>Frontend Mentor | FAQ Accordion Card</title>
     <script src="../solution/functinality.js"></script>
@@ -30,63 +34,76 @@
           src="../images/bg-pattern-desktop.svg"
           alt="Pattern"
         />
-        <div class="box_image_container">
-          <img
-            src="../images/illustration-box-desktop.svg"
-            alt="Box"
-            class="box"
-          />
-        </div>
+        <img
+          src="../images/illustration-box-desktop.svg"
+          alt="Box"
+          class="box"
+        />
       </div>
 
       <div class="faq_container">
         <h1>FAQ</h1>
-        <label for="q1" class="questions" onclick="clicked("a1")"
+        <label id="l1" class="questions" onclick="toggleClass('a1', 'l1', 'i1')"
           >How many team members can I invite?<span
-            ><img src="../images/icon-arrow-down.svg" alt="arrow" /></span
+            ><img
+              id="i1"
+              src="../images/icon-arrow-down.svg"
+              alt="arrow"
+              class="arrow" /></span
         ></label>
-        <input type="radio" name="questions" id="q1" />
-        <p class="answer" id="a1">
+        <p class="answer hide" id="a1">
           You can invite up to 2 additional users on the Free plan. There is no
           limit on team members for the Premium plan.
         </p>
         <hr />
-        <label for="q2" class="questions" onclick="clicked("a2")"
+        <label id="l2" class="questions" onclick="toggleClass('a2', 'l2', 'i2')"
           >What is the maximum file upload size?<span
-            ><img src="../images/icon-arrow-down.svg" alt="arrow" /></span
+            ><img
+              id="i2"
+              src="../images/icon-arrow-down.svg"
+              alt="arrow"
+              class="arrow" /></span
         ></label>
-        <input type="radio" name="questions" id="q2" />
-        <p class="answer" id="a2">
+        <p class="answer hide" id="a2">
           No more than 2GB. All files in your account must fit your allotted
           storage space.
         </p>
         <hr />
-        <label for="q3" class="questions" onclick="clicked("a3")"
+        <label id="l3" class="questions" onclick="toggleClass('a3', 'l3', 'i3')"
           >How do I reset my password?<span
-            ><img src="../images/icon-arrow-down.svg" alt="arrow" /></span
+            ><img
+              id="i3"
+              src="../images/icon-arrow-down.svg"
+              alt="arrow"
+              class="arrow" /></span
         ></label>
-        <input type="radio" name="questions" id="q3" />
-        <p class="answer" id="a3">
+        <p class="answer hide" id="a3">
           Click “Forgot password” from the login page or “Change password” from
           your profile page. A reset link will be emailed to you.
         </p>
         <hr />
-        <label for="q4" class="questions" onclick="clicked("a4")"
+        <label id="l4" class="questions" onclick="toggleClass('a4', 'l4', 'i4')"
           >Can I cancel my subscription?<span
-            ><img src="../images/icon-arrow-down.svg" alt="arrow" /></span
+            ><img
+              id="i4"
+              src="../images/icon-arrow-down.svg"
+              alt="arrow"
+              class="arrow" /></span
         ></label>
-        <input type="radio" name="questions" id="q4" />
-        <p class="answer" id="a4">
+        <p class="answer hide" id="a4">
           Yes! Send us a message and we’ll process your request no questions
           asked.
         </p>
         <hr />
-        <label for="q5" class="questions" onclick="clicked("a5")"
+        <label id="l5" class="questions" onclick="toggleClass('a5', 'l5', 'i5')"
           >Do you provide additional support?<span
-            ><img src="../images/icon-arrow-down.svg" alt="arrow" /></span
+            ><img
+              id="i5"
+              src="../images/icon-arrow-down.svg"
+              alt="arrow"
+              class="arrow" /></span
         ></label>
-        <input type="radio" name="questions" id="q5" />
-        <p class="answer" id="a5">
+        <p class="answer hide" id="a5">
           Chat and email support is available 24/7. Phone lines are open during
           normal business hours.
         </p>
