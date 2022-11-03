@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/CVakratsas/Frontend-Mentor/tree/master/02_InteractiveRatingComponent/solution)
+- Solution URL: [Solution](https://cvakratsas.github.io/Frontend-Mentor/02_Interactive_Rating_Component/solution/index.html)
 
 ## My process
 
