@@ -11,9 +11,9 @@
 }
 
 .container,
-.learn-to-code,
 .log-in-section,
-.try-it-for-free,
+.learn-box,
+.terms-and-services,
 .fields {
   outline-style: solid;
   outline-color: black;
@@ -39,35 +39,58 @@ body {
 }
 
 .learn-to-code {
-  display: flex;
-  flex-direction: column;
   width: 50%;
-  padding: 1rem;
-  margin: 1rem;
-  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.learn-to-code h1 {
+.learn-box {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.learn-box h1 {
   font-weight: 700;
   font-size: 2.2rem;
   margin: 0;
   line-height: 2.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.learn-to-code p {
+.learn-box p {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .log-in-section {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  align-items: center;
   width: 50%;
   height: 100%;
-  padding: 1rem;
-  margin: 1rem;
+}
+
+.try-it-for-free {
+  width: 90%;
+  border-radius: 10px;
+  height: 7%;
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+.try-it-for-free span {
+  font-weight: 600;
 }
 
 .white-area {
@@ -75,21 +98,16 @@ body {
   border-radius: 10px;
   background-color: white;
   height: 80%;
-}
-
-.try-it-for-free {
-  width: 90%;
-  border-radius: 10px;
-  height: 10%;
-  border: solid black 0.5px;
-  background-color: var(--blue);
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .fields {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  width: 90%;
 }
 
 .fields input {
@@ -98,7 +116,6 @@ body {
   font-size: 14px;
   font-weight: 600;
   padding: 0.5rem;
-  margin: 1rem;
   border-radius: 7px;
   border: solid black 0.5px;
 }
@@ -107,4 +124,9 @@ body {
   background-color: var(--green);
   font-size: 16px;
   font-weight: 500;
+  /* height: 3rem; */
+}
+
+.terms-and-services {
+  width: 90%;
 }
