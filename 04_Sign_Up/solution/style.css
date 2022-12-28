@@ -10,12 +10,8 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container,
-.log-in-section,
-.learn-box,
-.terms-and-services,
-.fields {
-  outline-style: solid;
+.white-area {
+  /* outline-style: solid; */
   outline-color: black;
 }
 
@@ -78,6 +74,7 @@ body {
 
 .try-it-for-free {
   width: 90%;
+  margin-top: 2.5rem;
   border-radius: 10px;
   height: 7%;
   background-color: var(--blue);
@@ -87,10 +84,12 @@ body {
   justify-content: center;
   font-weight: 200;
   font-size: 1rem;
+  box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
 }
 
 .try-it-for-free span {
   font-weight: 600;
+  color: var(--grayish-blue);
 }
 
 .white-area {
@@ -107,26 +106,57 @@ body {
 .fields {
   display: flex;
   flex-direction: column;
+  margin-top: 2.2rem;
   width: 90%;
 }
 
 .fields input {
   margin: 1rem 0;
-  height: 1.5rem;
-  font-size: 14px;
+  height: 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 0.5rem;
-  border-radius: 7px;
-  border: solid black 0.5px;
+  padding: 1.5rem;
+  border-radius: 0.4rem;
+  border: solid var(--grayish-blue) 0.5px;
 }
 
-#claim {
+.fields input::placeholder {
+  color: var(--grayish-blue);
+}
+
+.fields input {
+  color: var(--blue);
+}
+
+.fields input:focus {
+  outline: none !important;
+  border: 1px solid var(--dark-blue);
+}
+
+input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--green);
-  font-size: 16px;
-  font-weight: 500;
-  /* height: 3rem; */
+  font-size: 1rem;
+  font-weight: 600;
+  height: 2rem;
+  color: white;
+  box-shadow: 0 0.3rem 0.1rem rgb(45, 161, 111);
+  border: none;
 }
 
 .terms-and-services {
+  display: flex;
+  justify-content: center;
   width: 90%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--grayish-blue);
+  margin-bottom: 3rem;
+}
+
+.terms-and-services > span {
+  color: var(--red);
 }

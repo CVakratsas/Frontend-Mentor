@@ -40,28 +40,43 @@
       </div>
       <div class="log-in-section">
         <div class="try-it-for-free">
-          <span>Try it free 7 days</span>&nbsp;then $20/mo. thereafter
+          Try it free 7 days&nbsp;<span>then $20/mo. thereafter</span>
         </div>
         <div class="white-area">
-          <div class="fields">
-            <input type="text" name="first-name" id="name" placeholder="Name" />
+          <form method="post" class="fields">
+            <input
+              type="text"
+              name="first-name"
+              id="name"
+              placeholder="Name"
+              required
+            />
             <input
               type="text"
               name="last-name"
               id="last-name"
               placeholder="Last name"
+              required
             />
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
+              required
             />
-            <input id="claim" type="button" value="CLAIM YOUR FREE TRIAL" />
-          </div>
+            <input type="submit" value="CLAIM YOUR FREE TRIAL" />
+          </form>
           <div class="terms-and-services">
-            By clicking the button, you are agreeing to our Terms and Services
+            By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
           </div>
         </div>
       </div>
