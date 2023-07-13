@@ -1,0 +1,189 @@
+/* Variables */
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+/* Reset */
+body,
+p,
+a,
+ul,
+li,
+h1,
+button {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Epilogue";
+  src: url(../Fonts/Epilogue/Epilogue-VariableFont_wght.ttf);
+}
+
+:root {
+  font-size: 18px;
+  color: var(--medium-gray);
+}
+
+h1 {
+  font-weight: 700;
+  font-style: bold;
+  color: var(--almost-black);
+}
+
+body {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+a,
+
+/* Base Styles */
+body {
+  font-family: "Epilogue";
+  overflow-x: hidden;
+  background: var(--almost-white);
+}
+
+button {
+  font-size: 1rem;
+  color: var(--medium-gray);
+}
+
+/* Mobile Styles */
+.site-nav ul,
+.site-nav button {
+  display: none;
+}
+
+.site-nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav .logo {
+  margin: 10px 10px;
+}
+
+.site-nav .menu {
+  margin: 10px 10px;
+}
+
+#main .hero-android {
+  width: 100vw;
+  object-fit: contain;
+}
+
+#main .main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 35px 15px;
+}
+
+#main .main-text p {
+  text-align: center;
+  margin: 25px 0;
+}
+
+#main .main-text button {
+  border-radius: 15px;
+  padding: 12px 20px;
+  color: var(--almost-white);
+  background-color: var(--almost-black);
+}
+
+#main .icons-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#main .icons-bottom img {
+  width: 65px;
+  height: auto;
+  object-fit: fill;
+}
+
+#main .hero-desktop {
+  display: none;
+}
+
+/* Large tablets styles */
+@media screen and (min-width: 600px) {
+  .site-nav {
+    height: 80px;
+  }
+
+  .site-nav .logo {
+    margin: 15px 15px;
+  }
+
+  .site-nav .menu {
+    margin: 15px 15px;
+  }
+
+  .site-nav .logo {
+    width: 120px;
+    object-fit: contain;
+  }
+
+  .site-nav .menu {
+    width: 50px;
+  }
+
+  #main .icons-bottom img {
+    width: 100px;
+    height: auto;
+    object-fit: fill;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px) {
+  .site-nav {
+    height: 60px;
+  }
+
+  .site-nav .logo {
+    margin: 10px 10px;
+  }
+
+  .site-nav .menu {
+    margin: 10px 10px;
+  }
+
+  #main {
+    display: flex;
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex-flow: row-reverse;
+  }
+
+  #main .hero-android {
+    display: flex;
+    order: 3;
+    width: 40vw;
+    object-fit: cover;
+  }
+
+  #main .main-text {
+    display: flex;
+    flex-direction: column;
+  }
+}
