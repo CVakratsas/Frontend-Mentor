@@ -68,11 +68,13 @@ header button {
   align-items: center;
   width: auto;
   height: auto;
+  padding: 5px 0;
   background-color: var(--dark-blue);
+  cursor: pointer;
   color: var(--white);
 }
 
-header > button > img {
+header button img {
   width: 12px;
   margin-right: 10px;
   height: auto;
@@ -96,7 +98,7 @@ main {
 }
 
 /* Search styles */
-.search-filter .search-bar {
+.search-bar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -104,17 +106,36 @@ main {
   height: 30px;
   border-radius: 5px;
   padding: 10px 15px;
+  color: var(--white);
 }
 
-.search-filter .search-bar img {
+.search-bar input {
+  width: 100%;
+  border: none;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  height: 100%;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar img {
   width: 18px;
   margin: 0 15px;
+  padding: 8px 8px;
   filter: none;
+  cursor: pointer;
   -webkit-filter: invert(100%);
 }
 
 /* Filter styles */
 .filter-button {
+  user-select: none;
+  -webkit-user-select: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,7 +167,9 @@ main {
 }
 
 .options {
-  /* display: none; */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   background-color: var(--dark-blue);
   padding: 10px 0;
   margin-top: 15px;
@@ -156,6 +179,11 @@ main {
   overflow: auto;
   z-index: 1;
   border-radius: 5px;
+}
+
+.options.open {
+  display: block;
+  opacity: 1;
 }
 
 .options h3 {

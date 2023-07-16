@@ -1,15 +1,21 @@
 "use strict";
 
-// const dropdown = document.querySelector(".dropdown-container");
-// dropdown.addEventListener("click", showDropDown);
+const button = document.querySelector(".filter-button");
+const dropdown = document.querySelector(".options");
+
+button.addEventListener("click", toggleDropdown);
 
 // function showDropDown() {
-//   if (dropdown.style.display === "none") {
-//     dropdown.style.display = "block";
+//   if (button.style.display == "none") {
+//     button.style.display = "block";
 //   } else {
-//     dropdown.style.display = "none";
+//     button.style.display = "none";
 //   }
 // }
+
+function toggleDropdown() {
+  dropdown.classList.toggle("open");
+}
 
 fetch(
   "https://restcountries.com/v3.1/region/europe?fields=name,population,region,capital,flags"
