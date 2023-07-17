@@ -238,3 +238,8 @@ main {
 .info-container h1 {
   margin-bottom: 10px;
 }
+
+/* Error countries section */
+.gif-error {
+  object-fit: contain;
+}

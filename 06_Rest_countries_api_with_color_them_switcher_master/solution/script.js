@@ -1,67 +1,130 @@
 "use strict";
+// Declare variables
+const SEARCH_FILTER = "name";
+const CONTINENT_FILTER = "region";
 
-const button = document.querySelector(".filter-button");
+// Load europe countries as default
+loadCountries("europe", CONTINENT_FILTER);
+
+// Drop down code section
+const filterButton = document.getElementById("filterButton");
 const dropdown = document.querySelector(".options");
+const dropdownOptions = document.querySelectorAll(".options h3");
 
-button.addEventListener("click", toggleDropdown);
+filterButton.addEventListener("click", () => {
+  toggleDropdown();
+});
 
-// function showDropDown() {
-//   if (button.style.display == "none") {
-//     button.style.display = "block";
-//   } else {
-//     button.style.display = "none";
-//   }
-// }
-
-function toggleDropdown() {
-  dropdown.classList.toggle("open");
-}
-
-fetch(
-  "https://restcountries.com/v3.1/region/europe?fields=name,population,region,capital,flags"
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    for (let country of data) {
-      // Access the required information from the response
-      const name = country.name.common;
-      const region = country.region;
-      const capital = country.capital;
-      const population = country.population;
-      const flag = country.flags.svg;
-      const flagAlt = country.flags.alt;
-
-      // Create the div element
-      const divInfo = document.createElement("div");
-      const divCountry = document.createElement("div");
-
-      // Set the innerHTML of the divCountry and the divInfo
-      divCountry.innerHTML = `
-        <img src="${flag}" alt="${flagAlt}" />
-      `;
-
-      divInfo.innerHTML = `
-      <h1>${name}</h1>
-      <h3><strong>Population:</strong> ${population}</h3>
-      <h3><strong>Region:</strong> ${region}</h3>
-      <h3><strong>Capital:</strong> ${capital}</h3>
-      `;
-
-      // Set the css class for each country container
-      divCountry.classList.add("country-box");
-      divInfo.classList.add("info-container");
-
-      divCountry.appendChild(divInfo);
-
-      // Append the divCountry to the parent HTML element
-      const countriesContainer = document.getElementsByClassName(
-        "countries-container"
-      )[0];
-      countriesContainer.appendChild(divCountry);
-    }
-  })
-  .catch(function (error) {
-    console.log("Error:", error);
+// Add event listeners to each continent option
+dropdownOptions.forEach((option) => {
+  option.addEventListener("click", (event) => {
+    let lowercaseContinent = option.textContent.toLowerCase();
+    loadCountries(lowercaseContinent, CONTINENT_FILTER);
+    toggleDropdown();
   });
+});
+
+const toggleDropdown = () => {
+  dropdown.classList.toggle("open");
+};
+
+// Event listener for the document to close the dropdown when focus is lost
+document.addEventListener("click", (event) => {
+  const filterButton = document.getElementById("filterButton");
+  const dropdown = document.querySelector(".options");
+  // Check if the clicked element is within the dropdown
+  if (
+    !filterButton.contains(event.target) &&
+    !dropdown.contains(event.target)
+  ) {
+    dropdown.classList.remove("open");
+  }
+});
+
+// Search bar code section
+const searchButton = document.getElementById("searchButton");
+const searchBar = document.querySelector(".search-bar input");
+
+// Adding event listeners to the search image and to the enter key
+searchButton.addEventListener("click", () => {
+  handleSearch();
+});
+
+searchBar.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    handleSearch();
+  }
+});
+
+// Function to search the country
+const handleSearch = () => {
+  const lowercaseCountryName = searchBar.value.toLowerCase();
+  loadCountries(lowercaseCountryName, SEARCH_FILTER);
+};
+
+/*
+Function that sends the request to the server and populates
+the countries section with the divs of each country
+*/
+function loadCountries(filter, typeOfFilter) {
+  fetch(
+    "https://restcountries.com/v3.1/" +
+      typeOfFilter +
+      "/" +
+      filter +
+      "?fields=name,population,region,capital,flags"
+  )
+    .then(function parseToJSON(response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // Empty the countries section before loading the new ones
+      const countriesContainer = document.querySelector(".countries-container");
+      countriesContainer.innerHTML = "";
+
+      for (let country of data) {
+        // Access the required information from the response
+        const name = country.name.common;
+        const region = country.region;
+        const capital = country.capital;
+        const population = country.population;
+        const flag = country.flags.svg;
+        const flagAlt = country.flags.alt;
+
+        // Create the div element
+        const divInfo = document.createElement("div");
+        const divCountry = document.createElement("div");
+
+        // Set the innerHTML of the divCountry and the divInfo
+        divCountry.innerHTML = `
+          <img src="${flag}" alt="${flagAlt}" />
+        `;
+
+        divInfo.innerHTML = `
+        <h1>${name}</h1>
+        <h3><strong>Population:</strong> ${population}</h3>
+        <h3><strong>Region:</strong> ${region}</h3>
+        <h3><strong>Capital:</strong> ${capital}</h3>
+        `;
+
+        // Set the css class for each container
+        divCountry.classList.add("country-box");
+        divInfo.classList.add("info-container");
+
+        // Construct country element
+        divCountry.appendChild(divInfo);
+
+        // Append it to the parent container
+        countriesContainer.appendChild(divCountry);
+      }
+      console.log("Countries updated");
+    })
+    .catch(function (error) {
+      // console.log("Error:", error);
+      const countriesContainer = document.querySelector(".countries-container");
+      const gifImage = document.createElement("img");
+      gifImage.src = "gifs/planet_error.gif";
+      gifImage.classList.add("gif-error");
+      countriesContainer.appendChild(gifImage);
+    });
+}
