@@ -34,6 +34,14 @@ body {
   min-width: 375px;
 }
 
+.light-theme header {
+  background-color: var(--white);
+}
+
+.light-theme body {
+  background-color: var(--very-light-gray);
+}
+
 h3 {
   font-weight: 300;
   font-size: 0.9rem;
@@ -200,16 +208,19 @@ main {
 .countries-container {
   box-sizing: border-box;
   width: 100%;
-  padding: 2.5rem;
+  padding: 40px;
   display: flex;
-  flex-direction: column;
-  row-gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 55px;
+  column-gap: 50px;
 }
 
 .country-box {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  width: 250px;
 }
 
 .country-box img {
@@ -242,4 +253,8 @@ main {
 /* Error countries section */
 .gif-error {
   object-fit: contain;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 620px) {
 }

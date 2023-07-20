@@ -6,6 +6,13 @@ const CONTINENT_FILTER = "region";
 // Load europe countries as default
 loadCountries("europe", CONTINENT_FILTER);
 
+// Dark mode button code section
+const darkModeButton = document.getElementById("btnDarkMode");
+darkModeButton.addEventListener("click", () => {
+  const bodyElement = document.querySelector("body");
+  bodyElement.classList.toggle(".lightmode>body");
+});
+
 // Drop down code section
 const filterButton = document.getElementById("filterButton");
 const dropdown = document.querySelector(".options");
