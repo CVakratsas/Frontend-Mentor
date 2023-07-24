@@ -115,7 +115,7 @@ function loadCountries(filter, typeOfFilter) {
         `;
 
         // Set the css class for each container
-        divCountry.classList.add("country-box");
+        divCountry.classList.add("country-box", "shadow");
         divInfo.classList.add("info-container");
 
         // Construct country element
@@ -124,10 +124,8 @@ function loadCountries(filter, typeOfFilter) {
         // Append it to the parent container
         countriesContainer.appendChild(divCountry);
       }
-      console.log("Countries updated");
     })
     .catch(function (error) {
-      // console.log("Error:", error);
       const countriesContainer = document.querySelector(".countries-container");
       const gifImage = document.createElement("img");
       gifImage.src = "gifs/planet_error.gif";

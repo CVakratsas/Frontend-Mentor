@@ -26,12 +26,19 @@ button {
 body {
   min-width: 375px;
   overflow-x: hidden;
-  background: var(--very-dark-blue);
+  background: var(--very-light-gray);
   font-family: "Nunito Sans", sans-serif;
-  color: var(--white);
+  color: var(--very-dark-blue-text);
   font-weight: 300;
   font-size: 16px;
   min-width: 375px;
+}
+
+body.dark {
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
 }
 
 .light-theme header {
@@ -68,7 +75,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
 }
 
 header button {
@@ -77,17 +84,15 @@ header button {
   width: auto;
   height: auto;
   padding: 5px 0;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
   cursor: pointer;
-  color: var(--white);
+  color: var(--very-dark-blue);
 }
 
-header button img {
-  width: 12px;
-  margin-right: 10px;
-  height: auto;
-  filter: none;
-  -webkit-filter: invert(100%);
+header button svg {
+  width: auto;
+  height: 15px;
+  margin-right: 5px;
 }
 
 /* Main Styles */
@@ -110,34 +115,35 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
   height: 30px;
   border-radius: 5px;
   padding: 10px 15px;
-  color: var(--white);
 }
 
 .search-bar input {
   width: 100%;
   border: none;
-  color: var(--white);
-  background-color: var(--dark-blue);
+  color: var(--very-dark-blue-text);
+  background-color: var(--white);
   height: 100%;
   font-weight: 300;
   font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+  color: var(--dark-gray);
 }
 
 .search-bar input:focus {
   outline: none;
 }
 
-.search-bar img {
-  width: 18px;
+.search-bar svg {
+  width: 25px;
   margin: 0 15px;
   padding: 8px 8px;
-  filter: none;
   cursor: pointer;
-  -webkit-filter: invert(100%);
 }
 
 /* Filter styles */
@@ -156,11 +162,9 @@ main {
   cursor: pointer;
 }
 
-.filter-button img {
+.filter-button svg {
   width: 12px;
   height: auto;
-  filter: none;
-  -webkit-filter: invert(100%);
 }
 
 /* Dropdown styles */
@@ -170,7 +174,7 @@ main {
   width: 40%;
   height: 20px;
   border-radius: 5px;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
   padding: 10px 15px;
 }
 
@@ -178,7 +182,7 @@ main {
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
   padding: 10px 0;
   margin-top: 15px;
   width: 100%;
@@ -221,6 +225,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 250px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .country-box img {
@@ -238,7 +243,8 @@ main {
   border-radius: 0 0 5px 5px;
   width: 100%;
   height: 150px;
-  background-color: var(--dark-blue);
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
   padding: 20px;
 }
 
