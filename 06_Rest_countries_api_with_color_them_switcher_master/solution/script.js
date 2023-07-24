@@ -10,7 +10,7 @@ loadCountries("europe", CONTINENT_FILTER);
 const darkModeButton = document.getElementById("btnDarkMode");
 darkModeButton.addEventListener("click", () => {
   const bodyElement = document.querySelector("body");
-  bodyElement.classList.toggle(".lightmode>body");
+  bodyElement.classList.toggle("dark");
 });
 
 // Drop down code section

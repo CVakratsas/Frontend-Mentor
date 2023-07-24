@@ -24,29 +24,31 @@ button {
 
 /* Base styles */
 body {
+  /* White theme */
+  --background-color: var(--very-light-gray);
+  --text-color: var(--very-dark-blue-text);
+  --input-color: var(--dark-gray);
+  --elements-color: var(--white);
+
+  color: var(--text-color);
+  background-color: var(--background-color);
   min-width: 375px;
   overflow-x: hidden;
-  background: var(--very-light-gray);
   font-family: "Nunito Sans", sans-serif;
-  color: var(--very-dark-blue-text);
   font-weight: 300;
   font-size: 16px;
   min-width: 375px;
 }
 
 body.dark {
+  --background-color: var(--very-dark-blue);
+  --elements-color: var(--dark-blue);
+  --text-color: var(--white);
+  --input-color: var(--white);
 }
 
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
-}
-
-.light-theme header {
-  background-color: var(--white);
-}
-
-.light-theme body {
-  background-color: var(--very-light-gray);
 }
 
 h3 {
@@ -75,7 +77,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--elements-color);
 }
 
 header button {
@@ -84,9 +86,9 @@ header button {
   width: auto;
   height: auto;
   padding: 5px 0;
-  background-color: var(--white);
+  background-color: var(--elements-color);
   cursor: pointer;
-  color: var(--very-dark-blue);
+  color: var(--text-color);
 }
 
 header button svg {
@@ -115,7 +117,7 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--elements-color);
   height: 30px;
   border-radius: 5px;
   padding: 10px 15px;
@@ -124,15 +126,15 @@ main {
 .search-bar input {
   width: 100%;
   border: none;
-  color: var(--very-dark-blue-text);
-  background-color: var(--white);
+  color: var(--text-color);
+  background-color: var(--elements-color);
   height: 100%;
   font-weight: 300;
   font-size: 0.9rem;
 }
 
 .search-bar input::placeholder {
-  color: var(--dark-gray);
+  color: var(--input-color);
 }
 
 .search-bar input:focus {
@@ -174,7 +176,7 @@ main {
   width: 40%;
   height: 20px;
   border-radius: 5px;
-  background-color: var(--white);
+  background-color: var(--elements-color);
   padding: 10px 15px;
 }
 
@@ -182,7 +184,7 @@ main {
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
-  background-color: var(--white);
+  background-color: var(--elements-color);
   padding: 10px 0;
   margin-top: 15px;
   width: 100%;
@@ -243,8 +245,8 @@ main {
   border-radius: 0 0 5px 5px;
   width: 100%;
   height: 150px;
-  background-color: var(--white);
-  color: var(--very-dark-blue-text);
+  background-color: var(--elements-color);
+  color: var(--text-color);
   padding: 20px;
 }
 
