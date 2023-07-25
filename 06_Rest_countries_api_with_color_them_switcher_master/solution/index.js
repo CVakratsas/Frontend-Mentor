@@ -8,12 +8,10 @@ loadCountries("europe", CONTINENT_FILTER);
 
 // Dark mode button code section
 const darkModeButton = document.getElementById("btnDarkMode");
-darkModeButton.addEventListener("click", handleDarkMode());
-
-let handleDarkMode = () => {
+darkModeButton.addEventListener("click", () => {
   const bodyElement = document.querySelector("body");
   bodyElement.classList.toggle("dark");
-};
+});
 
 // Drop down code section
 const filterButton = document.getElementById("filterButton");
@@ -132,7 +130,7 @@ function loadCountries(filter, typeOfFilter) {
         });
       }
     })
-    .catch(function (error) {
+    .catch(() => {
       const countriesContainer = document.querySelector(".countries-container");
       const gifImage = document.createElement("img");
       gifImage.src = "gifs/planet_error.gif";
