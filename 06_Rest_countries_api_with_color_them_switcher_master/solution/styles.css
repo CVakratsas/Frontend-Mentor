@@ -6,6 +6,7 @@
   --dark-gray: hsl(0, 0%, 52%); /* Light mode input */
   --very-light-gray: hsl(0, 0%, 98%); /* Light mode background */
   --white: hsl(0, 0%, 100%); /* Dark mode text & light mode elements */
+  --transition-delay: 0.3s;
 }
 
 /* Reset */
@@ -38,6 +39,7 @@ body {
   font-weight: 300;
   font-size: 16px;
   min-width: 375px;
+  transition: var(--transition-delay);
 }
 
 body.dark {
@@ -95,6 +97,8 @@ header button svg {
   width: auto;
   height: 15px;
   margin-right: 5px;
+  fill: var(--text-color);
+  transition: var(--transition-delay);
 }
 
 /* Main Styles */
@@ -146,6 +150,8 @@ main {
   margin: 0 15px;
   padding: 8px 8px;
   cursor: pointer;
+  stroke: var(--text-color);
+  transition: var(--transition-delay);
 }
 
 /* Filter styles */
@@ -167,6 +173,8 @@ main {
 .filter-button svg {
   width: 12px;
   height: auto;
+  fill: var(--text-color);
+  transition: var(--transition-delay);
 }
 
 /* Dropdown styles */
@@ -183,7 +191,7 @@ main {
 .options {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-delay) ease;
   background-color: var(--elements-color);
   padding: 10px 0;
   margin-top: 15px;
@@ -228,6 +236,13 @@ main {
   flex-direction: column;
   width: 250px;
   border-radius: 5px 5px 5px 5px;
+}
+
+.country-box:hover,
+.country-box:focus {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: var(--transition-delay);
 }
 
 .country-box img {

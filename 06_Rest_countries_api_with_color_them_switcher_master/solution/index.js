@@ -8,10 +8,12 @@ loadCountries("europe", CONTINENT_FILTER);
 
 // Dark mode button code section
 const darkModeButton = document.getElementById("btnDarkMode");
-darkModeButton.addEventListener("click", () => {
+darkModeButton.addEventListener("click", handleDarkMode());
+
+let handleDarkMode = () => {
   const bodyElement = document.querySelector("body");
   bodyElement.classList.toggle("dark");
-});
+};
 
 // Drop down code section
 const filterButton = document.getElementById("filterButton");
@@ -123,6 +125,11 @@ function loadCountries(filter, typeOfFilter) {
 
         // Append it to the parent container
         countriesContainer.appendChild(divCountry);
+
+        divCountry.addEventListener("click", () => {
+          localStorage.setItem("countryName", name);
+          window.location.href = "country.html";
+        });
       }
     })
     .catch(function (error) {
@@ -132,4 +139,10 @@ function loadCountries(filter, typeOfFilter) {
       gifImage.classList.add("gif-error");
       countriesContainer.appendChild(gifImage);
     });
+}
+
+function loadCountry(countryName) {
+  window.location.href = "country.html";
+  const name = localStorage.getItem("countryName");
+  console.log(name);
 }

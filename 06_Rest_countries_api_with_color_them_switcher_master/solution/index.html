@@ -11,13 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./index.js" defer></script>
     <title>REST Countries</title>
   </head>
-  <body class="dark">
+  <body>
     <header class="shadow">
       <h2>Where in the world?</h2>
       <button id="btnDarkMode">
-        <!-- <img src="./icons/moon-solid.svg" alt="moon" /> -->
         <svg
           width="24"
           height="24"
@@ -29,27 +29,25 @@
             width="24"
             height="24"
             stroke="none"
-            stroke-width="5px"
             fill="#000000"
             opacity="0"
           />
 
-          <g transform="matrix(0.48 0 0 0.48 12 12)">
+          <g transform="matrix(0.83 0 0 0.83 12 12)">
             <path
               style="
-                stroke: black;
-                stroke-width: 2;
+                stroke: none;
+                stroke-width: 1;
                 stroke-dasharray: none;
                 stroke-linecap: butt;
                 stroke-dashoffset: 0;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 4;
-                fill: rgb(0, 0, 0);
                 fill-rule: nonzero;
                 opacity: 1;
               "
-              transform=" translate(-25, -25)"
-              d="M 31 4 C 19.414063 4 10 13.414063 10 25 C 10 36.585938 19.414063 46 31 46 C 33.988281 46 36.828125 45.367188 39.402344 44.242188 C 39.765625 44.082031 40 43.722656 40 43.324219 C 40 42.925781 39.765625 42.566406 39.402344 42.40625 C 32.695313 39.476563 28 32.796875 28 25 C 28 17.203125 32.695313 10.523438 39.402344 7.59375 C 39.765625 7.433594 40 7.074219 40 6.675781 C 40 6.277344 39.765625 5.917969 39.402344 5.757813 C 36.828125 4.632813 33.988281 4 31 4 Z M 31 6 C 32.984375 6 34.855469 6.398438 36.65625 6.96875 C 30.355469 10.59375 26 17.21875 26 25 C 26 32.78125 30.355469 39.40625 36.65625 43.03125 C 34.855469 43.601563 32.984375 44 31 44 C 20.496094 44 12 35.503906 12 25 C 12 14.496094 20.496094 6 31 6 Z"
+              transform=" translate(-16.47, -16)"
+              d="M 19 4 C 12.384534 4 7 9.3845336 7 16 C 7 22.615466 12.384534 28 19 28 C 20.75121 28 22.413314 27.614169 23.910156 26.941406 L 25.939453 26.029297 L 23.910156 25.117188 C 20.430069 23.55392 18 20.071641 18 16 C 18 11.928359 20.430069 8.4460796 23.910156 6.8828125 L 25.939453 5.9707031 L 23.910156 5.0585938 C 22.413314 4.3858314 20.75121 4 19 4 z M 19 6 C 19.692536 6 20.289975 6.2841646 20.941406 6.4199219 C 17.977941 8.6045028 16 12.043236 16 16 C 16 19.956764 17.977941 23.395497 20.941406 25.580078 C 20.289975 25.715835 19.692536 26 19 26 C 13.465466 26 9 21.534534 9 16 C 9 10.465466 13.465466 6 19 6 z"
               stroke-linecap="round"
             />
           </g>
@@ -60,11 +58,6 @@
     <main>
       <div class="search-filter">
         <div class="search-bar shadow">
-          <!-- <img
-            id="searchButton"
-            src="./icons/magnifying-glass-solid.svg"
-            alt="magnifying glass"
-          /> -->
           <svg
             id="searchButton"
             width="24"
@@ -104,7 +97,6 @@
               <g transform="matrix(1 0 0 1 -2 -2)">
                 <circle
                   style="
-                    stroke: rgb(33, 33, 33);
                     stroke-width: 2;
                     stroke-dasharray: none;
                     stroke-linecap: round;
@@ -123,7 +115,6 @@
               <g transform="matrix(1 0 0 1 6 6)">
                 <line
                   style="
-                    stroke: rgb(33, 33, 33);
                     stroke-width: 2;
                     stroke-dasharray: none;
                     stroke-linecap: round;
@@ -172,7 +163,7 @@
                     stroke-dashoffset: 0;
                     stroke-linejoin: miter;
                     stroke-miterlimit: 4;
-                    fill: rgb(0, 0, 0);
+
                     fill-rule: nonzero;
                     opacity: 1;
                   "
@@ -182,7 +173,6 @@
                 />
               </g>
             </svg>
-            <!-- <img src="./icons/caret-down-solid.svg" alt="down arrow" /> -->
           </div>
           <div class="options shadow">
             <h3>Africa</h3>
@@ -197,6 +187,5 @@
         <!-- Populate country boxes from js file -->
       </div>
     </main>
-    <script src="./script.js"></script>
   </body>
 </html>
