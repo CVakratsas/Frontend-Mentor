@@ -8,10 +8,16 @@ backButton.addEventListener("click", () => {
 });
 
 function loadCountryInfo(name, typeOfFilter) {
+  const url = new URL("https://restcountries.com/v3.1/name/" + name);
+  url.searchParams.set(
+    "fields",
+    "flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
+  );
   fetch(
-    "https://restcountries.com/v3.1/name/" +
-      name +
-      "?fields=flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
+    // "https://restcountries.com/v3.1/name/" +
+    //   name +
+    //   "?fields=flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
+    url
   )
     .then((response) => {
       return response.json();
@@ -21,7 +27,7 @@ function loadCountryInfo(name, typeOfFilter) {
       countryContainer.innerHTML = "";
 
       const flag = data[0].flags.svg;
-      const flagAlt = data[0].alt;
+      const flagAlt = data[0].flags.alt;
       const name = data[0].name.common;
       const nativeNames = data[0].name.nativeName;
       const nativeNamesList = Object.keys(nativeNames).map(
@@ -99,6 +105,12 @@ function loadCountryInfo(name, typeOfFilter) {
             console.log(error);
           });
       });
+
+      detailsContainer.classList.add("details-container");
+      generalDetailsContainer.classList.add("general-details-container");
+      moreDetailsContainer.classList.add("more-details-container");
+      borderCountriesContainer.classList.add("border-countries-container");
+      borderCountriesButtons.classList.add("border-countries-buttons");
     });
 }
 

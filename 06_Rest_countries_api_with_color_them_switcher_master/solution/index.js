@@ -84,7 +84,7 @@ function loadCountries(filter, typeOfFilter) {
     .then(function parseToJSON(response) {
       return response.json();
     })
-    .then(function (data) {
+    .then((data) => {
       // Empty the countries section before loading the new ones
       const countriesContainer = document.querySelector(".countries-container");
       countriesContainer.innerHTML = "";
