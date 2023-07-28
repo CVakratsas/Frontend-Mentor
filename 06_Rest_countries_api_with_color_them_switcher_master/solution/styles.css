@@ -17,11 +17,12 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
-  all: unset;
 }
 
 button {
+  all: unset;
   border: none;
+  cursor: pointer;
 }
 
 /* Base styles */
@@ -193,7 +194,6 @@ main {
 .options {
   display: none;
   opacity: 0;
-  transition: opacity var(--transition-delay) ease;
   background-color: var(--elements-color);
   padding: 10px 0;
   margin-top: 15px;
@@ -295,6 +295,19 @@ main button.back {
   background-color: var(--elements-color);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   margin-bottom: 50px;
+  padding: 5px 5px;
+}
+
+button.back svg {
+  margin-right: 8px;
+  stroke: var(--text-color);
+  transition: var(--transition-delay);
+}
+
+main button.back:hover,
+main button.back:focus {
+  transform: scale(1.06a);
+  transition: var(--transition-delay);
 }
 
 .country-container img {
@@ -345,6 +358,12 @@ main button.back {
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
   padding: 0 15px;
   font-size: 0.8rem;
+}
+
+.border-countries-buttons button:hover,
+.border-countries-buttons button:focus {
+  transform: scale(1.06);
+  transition: var(--transition-delay);
 }
 
 /* Tablet Styles */

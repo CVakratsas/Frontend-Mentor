@@ -2,6 +2,13 @@ const countryName = localStorage.getItem("countryName");
 const countryContainer = document.querySelector(".country-container");
 loadCountryInfo(countryName);
 
+// Dark mode button code section
+const darkModeButton = document.getElementById("btnDarkMode");
+darkModeButton.addEventListener("click", () => {
+  const bodyElement = document.querySelector("body");
+  bodyElement.classList.toggle("dark");
+});
+
 const backButton = document.querySelector("main button.back");
 backButton.addEventListener("click", () => {
   history.back();
