@@ -8,10 +8,26 @@ loadCountries("europe", CONTINENT_FILTER);
 
 // Dark mode button code section
 const darkModeButton = document.getElementById("btnDarkMode");
-darkModeButton.addEventListener("click", () => {
-  const bodyElement = document.querySelector("body");
-  bodyElement.classList.toggle("dark");
-});
+darkModeButton.addEventListener("click", toggleDarkMode);
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  console.log(document.body.classList.contains("dark").toString());
+  sessionStorage.setItem(
+    "darkThemeEnabled",
+    document.body.classList.contains("dark").toString()
+  );
+}
+
+// Loading dark theme from browser memory
+document.addEventListener("DOMContentLoaded", loadDarkModeOption);
+
+function loadDarkModeOption() {
+  const darkThemeEnabled = sessionStorage.getItem("darkThemeEnabled");
+  if (darkThemeEnabled === "true") {
+    toggleDarkMode();
+  }
+}
 
 // Drop down code section
 const filterButton = document.getElementById("filterButton");

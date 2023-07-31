@@ -4,10 +4,27 @@ loadCountryInfo(countryName);
 
 // Dark mode button code section
 const darkModeButton = document.getElementById("btnDarkMode");
-darkModeButton.addEventListener("click", () => {
-  const bodyElement = document.querySelector("body");
-  bodyElement.classList.toggle("dark");
-});
+darkModeButton.addEventListener("click", toggleDarkMode);
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  console.log(document.body.classList.contains("dark").toString());
+  sessionStorage.setItem(
+    "darkThemeEnabled",
+    document.body.classList.contains("dark").toString()
+  );
+}
+
+document.addEventListener("DOMContentLoaded", loadDarkModeOption);
+
+export function loadDarkModeOption() {
+  const darkThemeEnabled = sessionStorage.getItem("darkThemeEnabled");
+
+  // Check if the preference exists in sessionStorage and if it's true enable it
+  if (darkThemeEnabled === "true") {
+    toggleDarkMode();
+  }
+}
 
 const backButton = document.querySelector("main button.back");
 backButton.addEventListener("click", () => {
@@ -18,20 +35,19 @@ function loadCountryInfo(name, typeOfFilter) {
   const url = new URL("https://restcountries.com/v3.1/name/" + name);
   url.searchParams.set(
     "fields",
-    "flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
+    "flag,flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
   );
-  fetch(
-    // "https://restcountries.com/v3.1/name/" +
-    //   name +
-    //   "?fields=flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
-    url
-  )
+  fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
       // Emptying container
       countryContainer.innerHTML = "";
+
+      // Settings tab flag
+      const flagIcon = data[0].flag;
+      document.title = countryName + " " + flagIcon;
 
       const flag = data[0].flags.svg;
       const flagAlt = data[0].flags.alt;
