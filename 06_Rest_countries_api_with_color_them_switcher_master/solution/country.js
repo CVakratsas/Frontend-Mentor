@@ -1,5 +1,4 @@
 const countryName = localStorage.getItem("countryName");
-const countryContainer = document.querySelector(".country-container");
 loadCountryInfo(countryName);
 
 // Dark mode button code section
@@ -8,8 +7,7 @@ darkModeButton.addEventListener("click", toggleDarkMode);
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
-  console.log(document.body.classList.contains("dark").toString());
-  sessionStorage.setItem(
+  localStorage.setItem(
     "darkThemeEnabled",
     document.body.classList.contains("dark").toString()
   );
@@ -17,8 +15,8 @@ function toggleDarkMode() {
 
 document.addEventListener("DOMContentLoaded", loadDarkModeOption);
 
-export function loadDarkModeOption() {
-  const darkThemeEnabled = sessionStorage.getItem("darkThemeEnabled");
+function loadDarkModeOption() {
+  const darkThemeEnabled = localStorage.getItem("darkThemeEnabled");
 
   // Check if the preference exists in sessionStorage and if it's true enable it
   if (darkThemeEnabled === "true") {
@@ -43,6 +41,7 @@ function loadCountryInfo(name, typeOfFilter) {
     })
     .then((data) => {
       // Emptying container
+      const countryContainer = document.querySelector(".country-container");
       countryContainer.innerHTML = "";
 
       // Settings tab flag

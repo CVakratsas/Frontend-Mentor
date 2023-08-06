@@ -9,11 +9,9 @@ loadCountries("europe", CONTINENT_FILTER);
 // Dark mode button code section
 const darkModeButton = document.getElementById("btnDarkMode");
 darkModeButton.addEventListener("click", toggleDarkMode);
-
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
-  console.log(document.body.classList.contains("dark").toString());
-  sessionStorage.setItem(
+  localStorage.setItem(
     "darkThemeEnabled",
     document.body.classList.contains("dark").toString()
   );
@@ -23,7 +21,7 @@ function toggleDarkMode() {
 document.addEventListener("DOMContentLoaded", loadDarkModeOption);
 
 function loadDarkModeOption() {
-  const darkThemeEnabled = sessionStorage.getItem("darkThemeEnabled");
+  const darkThemeEnabled = localStorage.getItem("darkThemeEnabled");
   if (darkThemeEnabled === "true") {
     toggleDarkMode();
   }
@@ -90,14 +88,12 @@ Function that sends the request to the server and populates
 the countries section with the divs of each country
 */
 function loadCountries(filter, typeOfFilter) {
-  fetch(
-    "https://restcountries.com/v3.1/" +
-      typeOfFilter +
-      "/" +
-      filter +
-      "?fields=name,population,region,capital,flags"
-  )
-    .then(function parseToJSON(response) {
+  const url = new URL(
+    "https://restcountries.com/v3.1/" + typeOfFilter + "/" + filter
+  );
+  url.searchParams.set("fields", "name,population,region,capital,flags");
+  fetch(url)
+    .then((response) => {
       return response.json();
     })
     .then((data) => {
