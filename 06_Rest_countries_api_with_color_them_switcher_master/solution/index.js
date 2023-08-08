@@ -150,9 +150,3 @@ function loadCountries(filter, typeOfFilter) {
       countriesContainer.appendChild(gifImage);
     });
 }
-
-function loadCountry(countryName) {
-  window.location.href = "country.html";
-  const name = localStorage.getItem("countryName");
-  console.log(name);
-}
