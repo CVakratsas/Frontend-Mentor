@@ -113,6 +113,7 @@ main {
 }
 
 .search-filter {
+  box-sizing: border-box;
   height: 130px;
   display: flex;
   flex-direction: column;
@@ -221,6 +222,11 @@ main {
 }
 
 /* Countries section */
+.outer-container {
+  display: flex;
+  justify-content: center;
+}
+
 .countries-container {
   box-sizing: border-box;
   width: 100%;
@@ -237,7 +243,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 250px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
 }
 
 .country-box:hover,
@@ -367,5 +373,72 @@ main button.back:focus {
 }
 
 /* Tablet Styles */
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 660px) {
+  header {
+    padding: 20px 30px;
+  }
+
+  main {
+    padding: 20px 30px;
+  }
+
+  .search-filter {
+    margin-top: 20px;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-bar {
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .dropdown-container {
+    height: 30px;
+    width: 20%;
+    max-width: 160px;
+  }
+
+  .countries-container {
+    padding: 40px 0;
+  }
+}
+
+/* Large Tablet Styles */
+@media screen and (min-width: 900px) {
+  header {
+    box-sizing: border-box;
+    padding: 20px 50px;
+  }
+
+  main {
+    padding: 20px 50px;
+    max-width: 1250px;
+  }
+
+  .countries-container {
+    max-width: 1440px;
+    gap: 50px;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1440px) {
+  header {
+    padding: 20px 64px;
+  }
+
+  main {
+    padding: 20px 64px;
+    max-width: 1440px;
+  }
+
+  .countries-container {
+    gap: 64px;
+  }
+
+  .country-box {
+    width: 280px;
+  }
 }
