@@ -34,7 +34,7 @@ function loadCountryInfo(name) {
   const url = new URL("https://restcountries.com/v3.1/name/" + name);
   url.searchParams.set(
     "fields",
-    "flag,flags,name,population,region,subregion,capital,tld,currencies,languages,borders"
+    "flag,flags,name,population,region,subregion,capital,tld,currencies,languages,borders,maps"
   );
   fetch(url)
     .then((response) => {
@@ -58,6 +58,7 @@ function loadCountryInfo(name) {
 
         const flag = countryTemp.flags.svg;
         const flagAlt = countryTemp.flags.alt;
+        const googleMapsLink = countryTemp.maps.googleMaps;
         const nativeNames = countryTemp.name.nativeName;
         const nativeNamesList = Object.keys(nativeNames).map(
           (countryCode) => nativeNames[countryCode].common
@@ -83,20 +84,34 @@ function loadCountryInfo(name) {
 
         // Creating divs
         const detailsContainer = document.createElement("div");
+        const detailsFlex = document.createElement("div");
         const generalDetailsContainer = document.createElement("div");
         const moreDetailsContainer = document.createElement("div");
         const borderCountriesContainer = document.createElement("div");
         const borderCountriesButtons = document.createElement("div");
+        const flagContainer = document.createElement("div");
 
-        countryContainer.innerHTML = `
-        <img src="${flag}" alt="${flagAlt}" />
-      `;
+        // Creating flag
+        const flagElement = document.createElement("img");
+        flagElement.src = flag;
+        flagElement.alt = flagAlt;
+        flagElement.addEventListener("click", () => {
+          window.location.href = googleMapsLink;
+        });
+
+        flagContainer.appendChild(flagElement);
+        flagContainer.classList.add("element-centering");
+        countryContainer.appendChild(flagContainer);
+
         countryContainer.appendChild(detailsContainer);
         detailsContainer.innerHTML = `
-        <h1>${name}</h1>
-      `;
-        detailsContainer.appendChild(generalDetailsContainer);
-        detailsContainer.appendChild(moreDetailsContainer);
+          <h1>${name}</h1>
+        `;
+        detailsFlex.appendChild(generalDetailsContainer);
+        detailsFlex.appendChild(moreDetailsContainer);
+        detailsFlex.classList.add("details-flex");
+
+        detailsContainer.appendChild(detailsFlex);
         detailsContainer.appendChild(borderCountriesContainer);
 
         generalDetailsContainer.innerHTML = `
@@ -116,6 +131,8 @@ function loadCountryInfo(name) {
         borderCountriesContainer.innerHTML = `
         <h2>Border Countries:</h2>
       `;
+
+        // Creating button for each border country
         borderCountriesContainer.appendChild(borderCountriesButtons);
         borderCountriesList.forEach((borderCountryCode) => {
           fetchCountryName(borderCountryCode)

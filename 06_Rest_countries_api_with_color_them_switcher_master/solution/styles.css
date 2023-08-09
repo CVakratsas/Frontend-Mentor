@@ -312,14 +312,26 @@ button.back svg {
 
 main button.back:hover,
 main button.back:focus {
-  transform: scale(1.06a);
+  transform: scale(1.06);
   transition: var(--transition-delay);
+}
+
+.element-centering {
+  display: flex;
+  justify-content: center;
 }
 
 .country-container img {
   width: 100%;
   max-height: 220px;
+  max-width: 440px;
   object-fit: fill;
+}
+
+.country-container img:hover,
+.country-container img:focus {
+  transform: scale(1.02);
+  transition: var(--transition-delay);
 }
 
 .details-container {
@@ -358,7 +370,7 @@ main button.back:focus {
 
 .border-countries-buttons button {
   width: auto;
-  min-width: 20%;
+  min-width: 70px;
   text-align: center;
   background-color: var(--elements-color);
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
@@ -402,6 +414,33 @@ main button.back:focus {
 
   .countries-container {
     padding: 40px 0;
+  }
+
+  /* Country details */
+  main.country-main {
+    width: 660px;
+    max-width: 660px;
+    outline: 1px solid red;
+  }
+
+  .country-container img {
+    max-width: 440px;
+  }
+
+  .general-details-container {
+    margin-top: 0;
+    width: 45%;
+  }
+
+  .more-details-container {
+    margin-top: 0;
+  }
+
+  .details-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
   }
 }
 
