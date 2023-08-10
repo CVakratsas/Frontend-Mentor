@@ -417,10 +417,18 @@ main button.back:focus {
   }
 
   /* Country details */
+  .element-centering {
+    /* height: 100vh; */
+  }
+
   main.country-main {
     width: 660px;
     max-width: 660px;
     outline: 1px solid red;
+  }
+
+  .country-main button.back {
+    width: 100px;
   }
 
   .country-container img {
@@ -460,6 +468,29 @@ main button.back:focus {
     max-width: 1440px;
     gap: 50px;
   }
+
+  /* Country details */
+  main.country-main {
+    width: 100%;
+    max-width: 1440px;
+    padding: 40px 50px;
+  }
+
+  .country-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .country-container img {
+    object-fit: contain;
+  }
+
+  .country-container .element-centering {
+  }
+
+  .country-container .details-container {
+  }
 }
 
 /* Desktop Styles */
@@ -479,5 +510,13 @@ main button.back:focus {
 
   .country-box {
     width: 280px;
+  }
+
+  /* Country details */
+
+  main.country-main {
+    width: 100%;
+    max-width: 1440px;
+    padding: 40px 64px;
   }
 }
